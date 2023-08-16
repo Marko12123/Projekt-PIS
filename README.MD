@@ -2,7 +2,7 @@
 
 ## Upute
 
-- Skinite projekt preko githuba na [linku](https://github.com)
+- Skinite projekt preko githuba na [linku](https://github.com/Marko12123/Projekt-PIS)
 - Otvorite folder te navigirajte sa terminalom do njega
 - Pokrenite komandu `docker build -t rezervacije_app .`
 - Kada se dovrši pokrenite komandu `docker run -p 5000:5000 rezervacije_app`
