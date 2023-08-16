@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Program za upravljanje rezervacijama tura gliserima</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+  </head>
+  <body>
+    <h2>Nova Rezervacija</h2>
+    <form id="createReservationForm">
+      <input
+        type="text"
+        placeholder="Nositelj Rezervacije"
+        id="nositelj_rezervacije"
+      />
+      <input type="number" placeholder="Broj Osoba" id="broj_osoba" required />
+      <input
+        type="text"
+        placeholder="Vrijeme Pocetka"
+        id="vrijeme_pocetka"
+        required
+      />
+      <input
+        type="number"
+        placeholder="Trajanje u minutama"
+        id="trajanje_minute"
+        required
+      />
+      <input type="number" placeholder="Cijena" id="cijena" required />
+      <input type="number" placeholder="Popust" id="popust" />
+      <input type="text" placeholder="Vodic" id="vodic" required />
+      <button type="submit">Rezerviraj</button>
+    </form>
+
+    <h2>Traži, promjeni, obriši</h2>
+    <label for="reservation_id">ID rezervacije (0 za pregled):</label>
+    <input type="number" id="reservation_id" />
+
+    <button onclick="readReservation()">Traži</button>
+    <button onclick="updateReservation()">Promjeni</button>
+    <button onclick="deleteReservation()">Obriši</button>
+
+    <div id="result"></div>
+
+    <div>
+      <canvas id="reservationsChart"></canvas>
+    </div>
+
+    <div>
+      <canvas id="durationChart"></canvas>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>
